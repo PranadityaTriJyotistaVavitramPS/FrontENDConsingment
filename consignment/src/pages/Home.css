@@ -1,0 +1,506 @@
+.bagianakhir {
+    background: linear-gradient(to top, #0072B8, #7ABCDE, #FFFFFF, #FFFFFF 80%);
+}
+
+.horizontal-line {
+    border: none; /* Menghapus border default */
+    height: 1px; /* Ketebalan garis */
+    background-color: white; /* Warna garis */
+    margin: 20px 0; /* Jarak atas dan bawah */
+}
+
+.tulisanakhir {
+    font-family: "Lexend", sans-serif;
+    justify-content: center;  /* Center horizontally */
+    align-items: center; 
+    text-align: center;
+    padding-bottom: 30px;
+    color: white;
+}
+
+.logo img {
+    width: 30px; /* Sesuaikan ukuran */
+    height: 40px; /* Mempertahankan aspek rasio */
+}
+
+.copyright {
+    display: flex;
+    flex-direction: row;
+    font-family: "Lexend", sans-serif;
+    justify-content: space-between;
+    padding: 40px 40px 20px 40px;
+    color: white;
+}
+
+.copyrightleft {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;
+}
+
+.copyrightright {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    
+}
+
+.instagram {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+}
+
+
+.professional {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;  /* Center horizontally */
+    align-items: center; 
+    gap: 10px;
+    padding-top: 300px;
+    padding-bottom: 80px;
+}
+
+.professional1 {
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.professional11 {
+    border-radius: 10px;
+    width: 55vh; /* Ubah ke persentase lebar layar */
+    height: 200px;
+}
+
+.img .fotoprofesional {
+    width: 100%;
+    height: 100%;
+
+}
+
+.tulisanprofessional {
+    width: 70%;
+    padding-left: 10px;
+    color: white;
+    font-family: "Lexend", sans-serif;
+}
+
+.namadia {
+    font-weight: bold;
+}
+
+.deskripsidia {
+    font-weight: 200;
+    font-size: 12px;
+}
+
+.hargadia {
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.ratingdia {
+    font-weight: bold;
+    font-size: 10px;
+}
+
+.professional12 {
+    border-radius: 10px;
+    width: 55vh;
+    height: 150px;
+    background: linear-gradient(to right, #FCDC00, #0072B8 80%), rgba(0, 0, 0, 0.3); /* Lapisan utama di bawah, transparan di atas */
+    background-blend-mode: overlay; /* Agar lapisan saling menumpuk */
+    display: flex;
+    flex-direction: row;
+    padding: 20px 20px;
+    justify-content: center;  /* Center horizontally */
+    align-items: center;   
+}
+
+.need1 {
+    display: flex; /* atau gunakan display: grid; */
+    gap: 20px;
+    flex-direction: column;
+    text-align: right;
+    align-items: flex-end;
+}
+
+.imageneed img {
+    width: 70%; /* Makes the image fill the container width */
+    height: auto; /* Maintains aspect ratio */
+    /* border: solid white; */
+}
+
+
+.need11 {
+    font-size: 40px;
+    font-family: "Lexend", sans-serif;
+    color: rgba(0, 0, 0, 0.7);
+    text-align: right;
+}
+
+.need12 {
+    background-color: #0072B8;
+    width: fit-content;
+    text-align: right;
+    padding: 10px 12px;
+    font-family: "Lexend", sans-serif;
+    color: white;
+    border-radius: 18px;
+    font-weight: 300;
+    font-size:smaller;
+}
+
+
+.needwebappiot {
+    background-color: white;
+    height: 200px;
+    padding-bottom: 70px;
+    padding-top: 100px;
+}
+
+.need {
+    background-color: #FCDC00;
+    height: 260px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  /* Center horizontally */
+    align-items: center; 
+    gap: 30px;
+}
+
+
+.judulabout {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+
+/* Animasi untuk keluar dari bawah ke atas */
+@keyframes slideUp {
+    0% {
+        transform: translateY(200px); /* Mulai dari 30px di bawah */
+        opacity: 0; /* Mulai dari transparan */
+    }
+    100% {
+        transform: translateY(0); /* Posisi akhir, di tempat aslinya */
+        opacity: 1; /* Tampak penuh */
+    }
+}
+
+/* Terapkan animasi pada semua komponen utama */
+.all, 
+.discover, 
+.about,
+.jenis, 
+.displayproduk, 
+.produk, 
+.exploreproducts,
+.needwebappiot,
+.professional,
+.copyright,
+.produk1 {
+    opacity: 0; /* Awalnya transparan */
+    transform: translateY(30px); /* Mulai di bawah posisi aslinya */
+    animation: slideUp 0.8s ease-out forwards; /* Efek animasi keluar ke atas */
+}
+
+/* Beri jeda animasi pada elemen yang berbeda agar terlihat bertahap */
+.discover {
+    animation-delay: 1s;
+}
+
+.jenis {
+    animation-delay: 2s;
+}
+
+.displayproduk {
+    animation-delay: 3s;
+}
+
+.produk {
+    animation-delay: 4s;
+}
+
+.exploreproducts {
+    animation-delay: 5s;
+}
+
+.produk1 {
+    animation-delay: 6s;
+}
+
+.about {
+    animation-delay: 7s;
+}
+
+.needwebappiot {
+    animation-delay: 8s;
+}
+
+.professional{
+    animation-delay: 9s;
+}
+
+.copyright {
+    animation-delay: 10s;
+}
+
+
+
+.about {
+    width: 100vw;
+    height: 30vh;
+    background: linear-gradient(to bottom, #0072B8, #1F84C1, #FFFFFF);
+    justify-content: center;
+    display: flex;
+    padding-top: 20px;
+}
+
+.abouthima {
+    width: 80%;
+    height: 20vh;
+    background-color: rgba(0, 0, 0, 0.07);
+    display: flex;            /* Enable flexbox */
+    justify-content: center;  /* Center horizontally */
+    flex-direction: column;
+    text-align: left;
+    color: white;
+    font-family: "Lexend", sans-serif;
+    padding: 20px 20px;
+    border-radius: 100px 100px 0 0; 
+}
+
+.produk12{
+    padding: 10px;
+    display: flex;            /* Enable flexbox */
+    justify-content: center;  /* Center horizontally */
+    flex-direction: column;
+    gap: 5px;
+}
+
+.namaharga {
+    font-size: 15px;
+    font-family: "Lexend", sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.toko {
+    font-size: 10px;
+    font-family: "Lexend", sans-serif;
+    font-weight: 200;
+    color: white;
+}
+
+.exploreproducts{
+    background-color: #FCDC00;
+    width: 200px;
+    height: 40px;
+    padding: 10px;
+    display: flex;            /* Enable flexbox */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    font-size: 12px;
+    border-radius: 18px;
+}
+
+
+.produk11 {
+    border-radius: 10px;
+    border: 1px solid rgba(198, 214, 217, 0.75); /* Menambahkan ketebalan border */
+    background-color: white;
+    width: 35vh;
+    height: 200px;
+    display: flex;            /* Enable flexbox */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;   
+}
+
+.produk12 {
+    border-radius: 10px;
+    background: linear-gradient(to right, #0072B8, #7ABCDE);
+    width: 35vh;
+    height: 80px;
+}
+
+
+.produk {
+    gap: 30px;
+}
+
+.displayproduk {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Center horizontally */
+    align-items: center; 
+    gap: 30px;
+    font-family: "Lexend", sans-serif;
+    background-color: white;
+}
+
+.display {
+    padding: 60px 60px;
+}
+
+.produk {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;  /* Center horizontally */
+    align-items: center; 
+}
+
+.produk1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Center horizontally */
+    align-items: center; 
+    gap: 10px;
+    animation: slideUp 0.8s ease-out forwards; /* Efek animasi keluar ke atas */
+    opacity: 0; /* Awalnya transparan */
+    animation-delay: 0.2s;
+}
+
+.all {
+    display: flex;            /* Enable flexbox */
+    justify-content: center;  /* Center horizontally */
+    align-items: center;      /* Center vertically */
+    height: 1300px;
+    flex-direction: column;
+}
+
+.discover {
+    display: flex;
+    flex-direction: row;
+    font-family: "Lexend", sans-serif;
+    width: 80%;
+    /* padding: 20px; */
+    padding-bottom: 200px;
+    /* border: solid white; */
+}
+
+.jenis {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.baris1jenis {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.baris2jenis {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.electronicequipment, 
+.laboratoryequipment, 
+.foodandbeverages, 
+.clothes, 
+.softwareiot, 
+.other {
+    background-color: white;
+    height: 122px;
+    width: 253px;
+    border-radius: 10px;
+    font-family: "Lexend", sans-serif;
+    justify-content: center;  /* Center horizontally */
+    align-items: center; 
+    display: flex; 
+    text-align: center;
+    color: #227789;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan efek drop shadow */
+    animation: slideUp 0.8s ease-out forwards; /* Efek animasi keluar ke atas */
+    opacity: 0;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Animasi transisi */
+}
+
+/* Efek hover */
+.electronicequipment:hover, 
+.laboratoryequipment:hover, 
+.foodandbeverages:hover, 
+.clothes:hover, 
+.softwareiot:hover, 
+.other:hover {
+    background-color: #FCDC00; /* Ubah background saat dihover */
+    color: white; /* Ubah warna teks saat dihover */
+}
+
+
+.discoveryour {
+    background: linear-gradient(to bottom, #FFFFFF, #E3EAEC);
+    -webkit-background-clip: text; /* For Safari */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* For Safari */
+    color: transparent; /* Fallback for other browsers */
+    font-size: 66px; /* Adjust font size as needed */
+    font-weight: 400;
+    /* border: solid white; */
+    align-items: center;
+    padding-bottom: 15px;
+}
+
+.tulisandiscover {
+    display: flex;            /* Enable flexbox */  /* Center horizontally */
+          /* Center vertically */
+    justify-content: center;
+    flex-direction: column;   /* Arrange children in a column */
+    text-align: left;         /* Align text to the left */
+    
+}
+
+.login a {
+    align-items: left;
+    background-color: #FCDC00;
+    width: 70px;
+    border-radius: 18px;
+    padding: 5px 5px;
+    color: rgba(0, 0, 0, 0.7);
+    justify-content: center;  /* Center horizontally */
+    align-items: center;  
+    text-align: center;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+
+.gambardiscover {
+    width: 900px; /* Width of the container */
+    height: auto; /* Height will adjust automatically */
+    overflow: hidden; /* Optional: Prevents overflow if the image exceeds the container */
+    /* border: solid white; */
+    padding-right: 30px;
+    font-size: 12px;
+    
+}
+
+.gambardiscover img {
+    width: 100%; /* Makes the image fill the container width */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Ensures the image covers the container without stretching */
+    /* border: solid white; */
+}
+
+.all {
+    /* Define the gradient background and image */
+    background: 
+        url('/public/img/group14.png'), /* Gambar */
+        linear-gradient(to bottom, #7ABCDE, #0072B8); /* Gradien */
+    background-size: 100% auto, cover; /* Gambar memenuhi lebar, tinggi disesuaikan, gradien tetap cover */
+    background-position: bottom; /* Posisi gambar di tengah */
+    background-repeat: no-repeat;
+    top : 0;
+
+}
+

@@ -1,0 +1,39 @@
+.tulisankliksalahsatu {
+    font-weight: bold;
+    color: white;
+    font-size: 30px;
+}
+
+.duapilihan{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.pilihansellaproduct a {
+    background-color: #FCDC00;
+    color : rgba(0, 0, 0, 0.7);
+    width: 320px;
+    height: 320px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.pilihansellaservice a {
+    background-color: #FCDC00;
+    color : rgba(0, 0, 0, 0.7);
+    width: 320px;
+    height: 320px;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 20px;
+    text-decoration: none;
+}
