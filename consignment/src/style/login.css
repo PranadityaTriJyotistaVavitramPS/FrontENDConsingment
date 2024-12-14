@@ -1,3 +1,8 @@
+.icon i {
+    color: rgba(0, 0, 0, 0.5);  /* Hitam dengan opasitas 50% */
+    
+}
+
 form {
     display: flex; 
     flex-direction: column; 
@@ -5,13 +10,13 @@ form {
     width: 100%;
 }
 
-
 .username, .email, .password {
     position: relative; 
     display: flex;
     align-items: center;
     width: 100%;
     margin-bottom: 15px; 
+    gap: 5px;
 }
 
 .username label, .email label, .password label {
@@ -29,7 +34,7 @@ form {
     box-sizing: border-box;
     border: none; /* Menghilangkan border */
     outline: none; /* Menghilangkan outline */
-    padding-left: 30px; /* Memberikan ruang untuk ikon di kiri */
+    padding-left: 40px; /* Memberikan ruang untuk ikon di kiri */
 }
 
 .username input:focus, 
@@ -143,13 +148,37 @@ form {
     justify-content: center; /* Pusatkan konten secara horizontal */
     align-items: center; 
     gap: 20px;
-    width: 40vw; /* Gunakan persentase dari viewport untuk lebar */
-    max-width: 500px; /* Batas maksimal untuk layar besar */
-    min-width: 300px; /* Batas minimal untuk layar kecil */
+    width: 90vw; 
+    max-width: 800px;
     box-shadow: none; /* Hilangkan bayangan */
     border: none; /* Hilangkan border */
     outline: none; /* Hilangkan outline */
+    overflow-y: auto; /* Menambahkan scroll vertikal jika konten lebih tinggi dari layar */
+    max-height: 100vh; /* Membatasi tinggi agar tidak lebih dari tinggi viewport */
 }
+
+@media (max-width: 768px) {
+    .formlogin {
+        margin-top: 30px;
+        width: 95vw; /* Lebar lebih kecil pada perangkat kecil */
+    }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .formlogin {
+        padding-top: 150px; /* Sesuaikan padding jika diperlukan */
+    }
+    .pagelogin2 {
+        padding-top: 150px;
+        padding-bottom: 20px;
+    }
+    .pagelogin {
+        padding-top: 200px;
+        padding-bottom: 400px;
+    }
+}
+
+
 
 /* Text login */
 .tulisanlogin {
@@ -159,11 +188,12 @@ form {
     padding-bottom: 20px;
 }
 
-/* Button back to login */
+
 .backlogin {
     background-color: #FCDC00;
     color: black;
-    width: 5vw;
+    width: 10vw;
+    min-width: 100px;
     height: auto; /* Mengatur tinggi agar menyesuaikan konten */
     justify-content: center;
     align-items: center;
