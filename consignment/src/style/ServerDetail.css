@@ -1,0 +1,322 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+
+
+body {
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.back-button {
+  background-color: #ffd700;
+  width: 94px;
+  height: 31px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  border-radius: 17px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #e5c600;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.profile-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.main-image-container {
+  position: relative;
+  width: 70%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.carousel-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-button.left {
+  left: 60px;
+}
+
+.carousel-button.right {
+  right: 60px;
+}
+
+.carousel-button img {
+  width: 50px;
+  height: 50px;
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.thumbnail {
+  width: 80px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: border-color 0.3s ease, opacity 0.3s ease;
+}
+
+.thumbnail.active {
+  border-color: #ffd700;
+  opacity: 1;
+}
+
+.thumbnail:hover {
+  opacity: 1;
+}
+
+.content {
+  display: flex;
+  gap: 20px;
+}
+
+.left-box,
+.right-box {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.left-box {
+  flex: 7;
+}
+
+.right-box {
+  flex: 3;
+}
+
+.service-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 35px; /* Smaller padding for reduced size */
+  border-radius: 10px; /* Adjusted for smaller appearance */
+  width: 80%; /* Reduced width */
+  margin-bottom: 10px;
+  font-size: 14px; /* Slightly smaller font */
+}
+
+.service-item span {
+  display: flex;
+  align-items: left;
+  margin-left: -10px;
+}
+
+.service-item.blue {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: #fff;
+}
+
+.service-item.gray {
+  background: #f0f0f0;
+  color: #999;
+}
+
+.status {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.status.success {
+  color: green;
+}
+
+.status.failure {
+  color: red;
+}
+
+h1, h2 {
+  margin: 0 0 15px;
+  font-size: 24px;
+}
+
+p {
+  margin: 5px 0;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+.profile-details {
+  margin-top: 40px; /* Beri jarak atas untuk memisahkan dari elemen sebelumnya */
+}
+
+.profile-details p {
+  margin: 25px 0; /* Beri jarak antar paragraf */
+  font-size: 16px; /* Ukuran font */
+}
+
+.profile-details strong {
+  display: block; /* Tampilkan judul dalam blok terpisah */
+  font-weight: bold; /* Judul lebih tebal */
+  margin-bottom: 15px; /* Jarak bawah judul */
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .container {
+    padding: 10px;
+  }
+
+  .content {
+    flex-direction: column; /* Ubah tata letak menjadi kolom untuk layar kecil */
+    gap: 10px;
+  }
+
+  .left-box,
+  .right-box {
+    flex: 1; /* Pastikan kedua kotak memenuhi lebar layar */
+    width: 100%; /* Kotak menyesuaikan lebar layar */
+    padding: 15px;
+  }
+
+  .main-image-container {
+    width: 90%; /* Kurangi lebar untuk layar sedang */
+  }
+
+  .carousel-button {
+    top: 45%; /* Sesuaikan posisi tombol pada layar lebih kecil */
+  }
+
+  .carousel-button img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .thumbnails {
+    gap: 10px; /* Kurangi jarak antar thumbnail */
+  }
+
+  .thumbnail {
+    width: 60px;
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-header {
+    flex-direction: column; /* Nama berada di bawah foto untuk layar kecil */
+    align-items: center;
+  }
+
+  .profile-name {
+    font-size: 16px; /* Ukuran font lebih kecil */
+    text-align: center;
+  }
+
+  .main-image-container {
+    width: 100%; /* Gambar utama menyesuaikan dengan layar */
+  }
+
+  .carousel-button.left {
+    left: 20px;
+  }
+
+  .carousel-button.right {
+    right: 20px;
+  }
+
+  .service-item {
+    width: 100%; /* Layanan memenuhi lebar layar */
+    padding: 10px; /* Tambahkan padding lebih kecil */
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    width: 70px;
+    height: 28px;
+    font-size: 14px; /* Ukuran font lebih kecil */
+  }
+
+  h1, h2 {
+    font-size: 18px; /* Kurangi ukuran heading */
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  .profile-details p {
+    margin: 15px 0; /* Kurangi jarak antar paragraf */
+    font-size: 14px; /* Ukuran font lebih kecil */
+  }
+
+  .service-item {
+    padding: 8px; /* Padding lebih kecil */
+    font-size: 12px; /* Ukuran font lebih kecil */
+  }
+
+  .thumbnail {
+    width: 50px;
+    height: 30px; /* Thumbnail lebih kecil */
+  }
+}

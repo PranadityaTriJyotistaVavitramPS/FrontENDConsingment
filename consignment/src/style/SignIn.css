@@ -41,8 +41,8 @@ label {
     color: #333; /* Teks berwarna gelap agar mudah dibaca */
     appearance: none; /* Menghilangkan tampilan default pada dropdown */
     outline: none; /* Menghilangkan outline */
-    width: 120px;
 }
+
 
 .custom-select:focus {
     outline: none; /* Menghilangkan outline pada fokus */
@@ -94,7 +94,7 @@ label {
     margin-bottom: 3px; 
 }
 
-.usernamesignin input, .emailsignin input, .passwordsignin input, .input-field input, .input-field textarea{
+.usernamesignin input, .emailsignin input, .passwordsignin input, .input-field1 input, .input-field2 input, .input-field3 input{
     background-color: #F5F5F5;
     padding: 10px;
     width: 100%;
@@ -167,8 +167,9 @@ input[type="file"] {
 .backsignin {
     background-color: #FCDC00;
     color: black;
-    width: 5vw;
-    height: auto; 
+    width: 10vw;
+    min-width: 100px;
+    height: auto; /* Mengatur tinggi agar menyesuaikan konten */
     justify-content: center;
     align-items: center;
     display: flex;
@@ -177,52 +178,64 @@ input[type="file"] {
     border-radius: 18px;
     font-weight: 300;
     font-size: 10px;
-    position: fixed; 
-    top: 20px; 
-    left: 20px; 
-    z-index: 1000; 
-    border: none; 
-    outline: none; 
+    position: fixed; /* Gunakan fixed agar tetap di pojok atas kiri halaman */
+    top: 20px; /* Jarak 20px dari bagian atas */
+    left: 20px; /* Jarak 20px dari bagian kiri */
+    z-index: 1000; /* Jika ada elemen lain yang menutupi, pastikan ini berada di depan */
+    border: none; /* Menghilangkan border */
+    outline: none;
 }
 
 .tulisansignin {
     font-family: "Lexend", sans-serif;
     font-size: 42px;
     font-weight: bold;
+    text-align: center;
 }
 
 .allsignin {
     background: 
-        url('/public/img/group14.png'), 
-        linear-gradient(to bottom, #7ABCDE, #0072B8); 
-    background-size: 100% auto, cover; 
-    background-position: bottom; 
+        url('/public/img/group14.png'), /* Gambar */
+        linear-gradient(to bottom, #7ABCDE, #0072B8); /* Gradien */
+    background-size: 100% auto, cover; /* Gambar memenuhi lebar, tinggi disesuaikan, gradien tetap cover */
+    background-position: bottom; /* Posisi gambar di tengah */
     background-repeat: no-repeat;
     top: 0;
-    width: 100vw; 
-    height: 100vh; 
-    margin: 0; 
-    padding: 0; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    border: none;
-    outline: none; 
+    width: 100vw; /* Lebar penuh */
+    height: 100vh; /* Tinggi penuh */
+    margin: 0; /* Hilangkan margin */
+    padding: 0; /* Hilangkan padding */
+    display: flex; /* Gunakan flexbox untuk pemusatan */
+    justify-content: center; /* Pusatkan secara horizontal */
+    align-items: center; /* Pusatkan secara vertikal */
+    border: none; /* Hilangkan border */
+    outline: none; /* Hilangkan outline */
 }
 
 .formsignin {
     background-color: white;
     border-radius: 10px;
-    padding: 30px;
     display: flex;
     flex-direction: column;
     justify-content: center; 
     align-items: center; 
     gap: 20px;
-    width: 40vw; 
-    max-width: 500px; /* Batas maksimal untuk layar besar */
+    width: 90vw; 
     min-width: 300px; /* Batas minimal untuk layar kecil */
     box-shadow: none; /* Hilangkan bayangan */
     border: none; /* Hilangkan border */
     outline: none; /* Hilangkan outline */
+    height: 80vh;
+    overflow:hidden;
+    padding: 40px 40px;
 }
+
+.scrollkeatas {
+    max-height: 80vh; /* Maksimalkan tinggi sesuai layar */
+    overflow-y: auto; /* Tambahkan scroll hanya secara vertikal */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+

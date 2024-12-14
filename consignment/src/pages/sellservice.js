@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './sellservice.css';
+import '../style/sellservice.css';
 import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';

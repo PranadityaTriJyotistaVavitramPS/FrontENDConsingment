@@ -1,4 +1,4 @@
-import "./Find.css";
+import "../style/Find.css";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import ProductPage from "./ProductPage";
@@ -39,7 +39,7 @@ const Find = () => {
                     </div>
                     
                     <div className="page-content">
-                        {active === "product" && <ProductPage />}
+                        {active === "product" && <ProductPage/>}
                         {active === "service" && <ServicePage />}
                     </div>
                 </div>

@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+button {
+  font-family: 'Lexend', sans-serif;
+  font-size: 13px;
+}
+
+.back-button {
+  background-color: #ffd700;
+  width: 94px;
+  height: 31px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  border: none;
+  font-size: 13px;
+  margin-bottom: 20px;
+  border-radius: 17px;
+  cursor: pointer;
+}
+
+.back-button:hover {
+  background-color: #e5c600;
+}
+
+/* Product Section */
+.product-section {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px; /* Spasi antara tombol */
+  margin-bottom: 20px;
+}
+
+.product-button,
+.service-button {
+  padding: 5px 274px;
+  border: none;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  width: auto;
+}
+
+/* Product Button */
+.product-button {
+  background-color: #f0f0f0;
+  color: #666;
+}
+
+/* Service Button */
+.service-button {
+  background:linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+}
+
+/* Categories Section */
+.categories {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.category-button {
+  padding: 5px 173px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f0f0f0;
+  color: #666;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+  text-align: start;
+}
+
+.category-button.active {
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  color: white;
+}
+
+.category-button:hover {
+  background-color: #e0e0e0;
+}
+
+/* Services Section */
+.services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Service Card */
+.service-cards {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.service-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.service-info {
+  padding: 15px;
+}
+
+/* Profile Row */
+.profile-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* Service Description */
+.service-description {
+  font-size: 14px;
+  color: #666;
+  margin: 5px 0;
+}
+
+/* Service Rating */
+.service-rating {
+  font-size: 14px;
+  color: #666;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rating-star {
+  margin-right: 3px; /* Geser bintang ke kiri */
+}
+
+/* Service Price */
+.service-price {
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .services {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .category-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* For tablets (width <= 768px) */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  .categories {
+    justify-content: center;
+  }
+
+  .product-button {
+    width: 100%; /* Full width button for tablet */
+    text-align: center; /* Center the text */
+    padding: 10px 15px; /* Adjust padding for smaller screen */
+  }
+
+  .service-button {
+    width: 100%; /* Full width button for tablet */
+    text-align: center; /* Center the text */
+    padding: 10px 15px; /* Adjust padding for smaller screen */
+  }
+
+  .category-button {
+    padding: 10px;
+    font-size: 14px;
+    flex: 1; /* Agar tombol kategori memenuhi layar */
+  }
+
+  .service-card {
+    flex-direction: column;
+  }
+
+  .profile-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-name {
+    font-size: 14px;
+  }
+
+  .service-info {
+    text-align: center;
+  }
+
+  .service-description,
+  .service-price {
+    text-align: center;
+  }
+}
+
+/* For mobile devices (width <= 480px) */
+@media (max-width: 480px) {
+  .categories {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .category-button {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .service-card {
+    flex-direction: column;
+  }
+
+  .profile-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-info {
+    text-align: center;
+  }
+
+  .product-button {
+    width: 100%; /* Full width button for mobile */
+    padding: 8px 10px; /* Smaller padding for compact view */
+    text-align: center; /* Center the text */
+    background-color: #e0e0e0; /* Ensure consistent background */
+  }
+
+  .service-button {
+    width: 100%; /* Full width button for mobile */
+    padding: 8px 10px; /* Smaller padding for compact view */
+    text-align: center; /* Center the text */
+  }
+
+  .profile-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .service-image {
+    height: 120px;
+  }
+
+  .service-price {
+    font-size: 14px;
+  }
+}

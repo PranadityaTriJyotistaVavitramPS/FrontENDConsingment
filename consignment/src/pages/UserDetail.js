@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import './UserDetail.css'
+import '../style/UserDetail.css'
 import Cookies from 'js-cookie';
 import axios from 'axios';
 
@@ -29,6 +29,10 @@ function UserDetail() {
             [name]: value,
         }));
     };
+    const handleLogOutButton = () =>{
+        Cookies.remove("token");
+        navigate('/')
+    }
     
 
     useEffect(()=> {
@@ -44,7 +48,6 @@ function UserDetail() {
         })
         .then((response)=>{
             const userData = response.data
-            console.log("User data received:", userData);
             const formattedDate = new Date(userData.birthdate).toLocaleDateString('en-CA');
 
             // Set the profile state with user data
@@ -64,15 +67,11 @@ function UserDetail() {
         .catch((error) => {
           console.error("Error fetching user data:", error);
         });
-  
-    },[]);
+    },[profile]);
 
     const handleSaveButton = async (e) => {
         e.preventDefault();
         const token = Cookies.get('token');
-        
-        // Log the profile state to verify if changes are there
-        console.log("Saving profile data: ", profile);
     
         try {
             const data = new FormData();
@@ -268,10 +267,11 @@ function UserDetail() {
                     <b>Date of Birth:</b>
                     <span>{profile.dob}</span>
                 </div>
-                <div>
-                    <b>Password:</b>
-                    <span>{profile.password}</span>
+                <div className="pass-logout-container">
+                    <button className="changePasswordButton">Change Password</button>
+                    <button className="logOutButton" onClick={handleLogOutButton}>Log Out</button>
                 </div>
+                
                 </div>
             )}
             <button

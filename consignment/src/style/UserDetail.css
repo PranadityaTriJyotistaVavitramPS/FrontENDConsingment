@@ -35,7 +35,7 @@ body {
 
 .big-box {
   width: 1450px;
-  height: 500px;
+  height: 600px;
   margin: 0 auto;
   background-color: #ffffff;
   border: 1px solid rgba(122, 189, 222, 0.5);
@@ -140,6 +140,35 @@ body {
   color: #333; /* Warna teks nilai */
 }
 
+.pass-logout-container{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.changePasswordButton{
+  background-color: green;
+  color: white;
+  font-family: 'Lexend', sans-serif;
+  font-size: 14px;
+  border: none;
+  width: 130px;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+}
+.logOutButton{
+  background-color: darkred;
+  color: white;
+  font-family: 'Lexend', sans-serif;
+  font-size: 14px;
+  border: none;
+  width: 130px;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+}
 
 .profile-cardd {
   border:  1px solid rgba(122, 189, 222, 0.5);

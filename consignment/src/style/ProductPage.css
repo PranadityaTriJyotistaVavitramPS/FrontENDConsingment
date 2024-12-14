@@ -1,0 +1,191 @@
+.content {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: black;
+}
+
+.productandsaved {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distributes space evenly to push items to the sides */
+    align-items: center;
+}
+
+.productandsaved-navbar{
+    display: flex;
+    flex-direction: row;
+    gap: 53px;
+}
+
+.findproductpage, .findsavedproduct {
+    border-radius: 10px !important;
+    width: 47vw !important;
+    padding-left: 20px !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+    font-family: "Lexend", sans-serif !important;
+    font-size: 10px !important;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%; /* Menjaga dropdown di bawah tombol */
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    border-radius: 10px;
+    font-family: "Lexend", sans-serif !important;
+    font-size: 10px;
+    width: 47vw !important;
+}
+
+
+
+/* Styling untuk bagian header */
+.electronic {
+    width: 645px; /* Menyesuaikan lebar */
+    height: 31px;
+    top: 85px;
+    left: 47px;
+    background: linear-gradient(70deg, #f5f5f5 100%, rgba(0, 0, 0, 0.5)); /* Default background */
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.5);
+    font-family: 'Lexend', sans-serif;
+    font-size: 14px;
+    font-weight: 550;
+    cursor: default;
+    position: relative;
+    transition: background 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  /* Styling untuk efek hover */
+  .electronic:hover {
+    background: linear-gradient(90deg, #0072B8 0%, #7ABCDE 100%);
+    color: white;
+  }
+  
+  .saved:hover ~ .electronic {
+    background: linear-gradient(70deg, #f5f5f5 100%, rgba(0, 0, 0, 0.5));
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  .electronic:hover ~ .saved {
+    background: linear-gradient(70deg, #f5f5f5 100%, rgba(0, 0, 0, 0.5));
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  /* Layout untuk daftar produk */
+  .product-list {
+    display: flex;
+    margin-left: 0px;
+    gap: 20px;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  
+  /* Styling untuk setiap kartu produk */
+  .product-card {
+    width: 201px;
+    height: 260px;
+    background-color: #ffffff;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    font-family: 'Lexend', sans-serif; /* Terapkan font Lexend ke semua teks di dalam .product-card */
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sedikit bayangan */
+  }
+  
+  .product-image {
+    width: 200px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .product-info {
+    text-align: left;
+    width: 100%;
+    padding-top: 8px;
+  }
+  
+  .product-brand {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Bookmark Icon */
+  .bookmark-icon {
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #ccc; /* Warna default untuk bookmark */
+  }
+  
+  .bookmark-icon:hover {
+    color: #0072B8; /* Warna saat hover */
+  }
+  
+  .bookmark-icon.active {
+    color: #FFD700; /* Warna kuning saat bookmark aktif */
+  }
+  
+  /* Styling untuk judul produk */
+  .product-title {
+    font-size: 14px;
+    color: #333333;
+    font-weight: 600;
+    margin: 4px 0;
+    height: 40px; /* Memberikan tinggi tetap untuk menjaga konsistensi */
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  
+  /* Menyusun harga dan rating dalam satu baris */
+  .price-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 4px;
+  }
+  
+  .product-price {
+    font-size: 11px;
+    color: #0072B8;
+    font-weight: 400;
+  }
+  
+  .product-rating {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    color: #888888;
+  }
+  
+  .star {
+    color: #FFD700; /* Warna bintang */
+    margin-right: 2px;
+  }
+  
+  .rating, .reviews {
+    font-size: 12px;
+  }
+  

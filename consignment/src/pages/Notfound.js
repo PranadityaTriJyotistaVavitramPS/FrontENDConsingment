@@ -1,4 +1,4 @@
-import "./Notfound.css"
+import "../style/Notfound.css"
 import { useNavigate } from "react-router-dom"
 
 const Notfound = () => {

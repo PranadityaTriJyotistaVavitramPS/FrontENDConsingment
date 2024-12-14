@@ -1,4 +1,4 @@
-import "./milihjualapa.css"
+import "../style/milihjualapa.css"
 import { useNavigate } from "react-router-dom";
 import { Link } from 'react-router-dom';
 

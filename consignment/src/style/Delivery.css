@@ -4,7 +4,14 @@
     font-size: 15px;
 }
 
-.profile-image {
+@media (max-width: 1000px) {
+    .availabledeliveryoption {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+}
+
+.profile-image2 {
     max-width: 400px;  /* Maksimal lebar gambar */
     max-height: 400px; /* Maksimal tinggi gambar */
     width: auto;      /* Skalakan secara otomatis berdasarkan lebar */
@@ -23,10 +30,7 @@
     justify-content: flex-start; /* Teks tetap di kiri */
 }
 
-.pickup {
-    background: linear-gradient(to right, #0072B8, #7ABCDE);
-    color: white;
-}
+
 
 .request {
     background-color: #f5f5f5;
@@ -136,3 +140,32 @@
     border: none; /* Menghilangkan border */
     outline: none; /* Menghilangkan outline */
 }
+
+
+.clickone {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.pickup,
+.request {
+    padding: 10px 15px;
+    margin: 5px 0;
+
+    border-radius: 10px;
+    background-color: #f5f5f5; /* Warna default */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.pickup.active,
+.request.active {
+    background: linear-gradient(to right, #0072B8, #7ABCDE);
+    color: white; /* Opsional: Sesuaikan warna teks */
+}
+
+.text {
+    font-size: 14px;
+}
+

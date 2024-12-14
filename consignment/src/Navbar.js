@@ -8,7 +8,8 @@ function BoxContainer() {
   const [activeButton, setActiveButton] = useState(null);
   const navigate = useNavigate(); // Moved useNavigate here inside the component
   const [user,setUser] = useState(null);
-  const [loading,setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
+
 
   const handleSellButton = () =>{
     navigate('/sellselection')
@@ -26,11 +27,9 @@ function BoxContainer() {
       })
       .then((response)=>{
         setUser(response.data);
-        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching user data:", error);
-        setLoading(false);
       });
 
   },[]);
@@ -84,6 +83,8 @@ function BoxContainer() {
           type="text" 
           placeholder="Search..." 
           className="search-input" 
+          value={searchQuery}
+          onChange={(e)=> setSearchQuery(e.target.value)}
         />
         <button className="search-button">Search</button>
       </div>

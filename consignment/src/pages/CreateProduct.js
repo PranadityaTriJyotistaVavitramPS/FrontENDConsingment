@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CreateProduct.css';
+import '../style/CreateProduct.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Cookies from 'js-cookie';
@@ -7,9 +7,6 @@ import Cookies from 'js-cookie';
 function SellProductRequest() {
   const navigate = useNavigate();
   const [photos, setPhotos] = useState([null, null, null]);
-  // const [isDropdownOpen, setDropdownOpen] = useState(false);
-  // const [selectedProduct, setSelectedProduct] = useState("Categories");
-  const [selectedOption, setSelectedOption] = useState('');
   const [productForm,setProductForm] = useState({
     firstname:"",
     lastname:"",
@@ -25,6 +22,10 @@ function SellProductRequest() {
     product3_photo:null,
     product_desc:"",
   })
+  const [deliveryOptions, setDeliveryOptions] = useState({
+    pickUpAtCertainPlaces: false,
+    requestToTheSeller: false,
+  });
 
   const handleSubmitSellProduct = async(e) =>{
     e.preventDefault();
@@ -56,6 +57,9 @@ function SellProductRequest() {
       product_data.append("kategori", productForm.productcategory);
       product_data.append("googlemaplink", productForm.googlemapslink)
       product_data.append("product_desc",productForm.product_desc)
+      product_data.append("pickup", productForm.pickUpAtCertainPlaces);
+      product_data.append("request", productForm.requestToTheSeller);
+
 
       //memasukkan foto apabila terdapat foto
       if(productForm.product1_photo){
@@ -79,7 +83,7 @@ function SellProductRequest() {
       });
 
       if(response.status === 201){
-        navigate('/');
+        navigate('/find');
       }
     } catch (error) {
       console.error(error.message);
@@ -96,28 +100,22 @@ function SellProductRequest() {
     })
   }
 
-  const handleOptionChange = (e) =>{
-    setSelectedOption(e.target.value)
-  }
-
-//   const toggleDropdown = () => {
-//     setDropdownOpen(!isDropdownOpen);
-//   };
-
-//   const handleProductClick = (productName) => {
-//     setSelectedProduct(productName); // Mengubah nama tombol
-//     setDropdownOpen(false); // Menutup dropdown
-// };
-
-//   const products = [
-//     "Electronic Equipment",
-//     "Laboratory Equipment",
-//     "Food and Beverages",
-//     "Clothes",
-//     "Software/IoT Development Services",
-//     "Other",
-//   ];
-
+  const handleOptionChange = (e) => {
+    const { name, checked } = e.target;
+  
+    // Update the deliveryOptions state
+    setDeliveryOptions({
+      ...deliveryOptions,
+      [name]: checked,
+    });
+  
+    // Update the productForm state
+    setProductForm({
+      ...productForm,
+      [name]: checked, // Set the corresponding delivery option to true or false
+    });
+  };
+  
   // Fungsi untuk menangani unggah foto
   const handlePhotoUpload = (event) => {
     const files = Array.from(event.target.files);
@@ -254,15 +252,22 @@ function SellProductRequest() {
 
           <div className="form-col">
             <div className="input-group">
-              <div className='input-group'>
-                <label>Product Category</label>
-                <input 
-                  type='text'
-                  name='productcategory'
-                  value={productForm.productcategory}
-                  onChange={handleChange}
-                  />
-              </div>
+                <div className="input-group">
+                  <label>Product Category</label>
+                  <select
+                    name="productcategory"
+                    value={productForm.productcategory}
+                    onChange={handleChange}
+                  >
+                    <option value="">Select a category</option>
+                    <option value="Electronic Equipment">Electronic Equipment</option>
+                    <option value="Laboratory Equipment">Laboratory Equipment</option>
+                    <option value="Food and Beverages">Food and Beverages</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Software/IoT Development Services">Software/IoT Development Services</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
               <div className='delivery-option-wrapper'>
                   <div>
                     <label>Available Delivery Option</label>
@@ -271,10 +276,9 @@ function SellProductRequest() {
                     <div className='deliveryoption'>
                       <label>
                         <input
-                          type="radio"
-                          name="deliveryOption"
-                          value="Pick Up at Certain Places"
-                          checked={selectedOption === 'Pick Up at Certain Places'}
+                          type="checkbox"
+                          name="pickUpAtCertainPlaces"
+                          checked={deliveryOptions.pickUpAtCertainPlaces}
                           onChange={handleOptionChange}/>
                         <p>Pick Up at Certain Places</p>
                       </label>
@@ -283,10 +287,9 @@ function SellProductRequest() {
                     <div className='deliveryoption'>
                       <label>
                         <input
-                          type="radio"
-                          name="deliveryOption"
-                          value="Request to the Seller"
-                          checked={selectedOption === 'Request to the Seller'}
+                          type="checkbox"
+                          name="requestToTheSeller"
+                          checked={deliveryOptions.requestToTheSeller}
                           onChange={handleOptionChange}
                         />
                         <p>Request to the Seller</p>

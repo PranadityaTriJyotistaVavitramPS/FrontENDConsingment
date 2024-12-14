@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
+
+/* General styling */
+body {
+  margin: 0;
+  font-family: 'Lexend', sans-serif; /* Terapkan Lexend */
+  background-color: #f9f9f9;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+}
+
+/* Back button styling */
+.back-button {
+  background-color: #FCDC00;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 17.73px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 30px; /* Jarak dari atas */
+  left: 20px; /* Rata kiri */
+}
+
+/* Layout grid */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 65px; /* Tambahkan jarak dari tombol Back */
+  align-items: flex-start;
+}
+
+/* Image section */
+.image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Elemen diatur rata kiri */
+  gap: 20px;
+}
+
+.product-images {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+.main-image {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.image-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.nav-button {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.image-thumbnails {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start; /* Pastikan elemen rata kiri */
+  width: 100%; /* Thumbnail tetap mengikuti lebar kontainer */
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.thumbnail.active {
+  border-color: blue;
+}
+
+/* Styling untuk Product Details */
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0px; /* Jarak antar elemen lebih kecil */
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-left: -2cm;
+}
+
+/* Details Header */
+.details-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-fasilitas{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/* Category */
+.category {
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  background: linear-gradient(90deg, #0072B8 0%, #7ABCDE 100%);
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* Tombol Check */
+.delivery-option {
+  background-color: yellow;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Links Section */
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.link-item span,
+.link-item a {
+  font-size: 14px;
+}
+
+.link-item a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.link-item a:hover {
+  text-decoration: underline;
+}
+
+.profile-box {
+  display: flex; /* Gunakan flexbox untuk mengatur posisi horizontal */
+  align-items: center; /* Vertikal sejajar */
+  justify-content: start; /* Atur posisi ke kiri */
+  width: 100%; /* Sesuaikan lebar kontainer */
+  max-width: 480px; /* Tetap sejajar dengan lebar foto utama */
+  background-color: #ffffff;
+  text-align: left; /* Sesuaikan teks ke kiri */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  gap: 15px; /* Tambahkan jarak antara foto dan teks */
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.profile-img {
+  width: 60px; /* Ukuran kecil sesuai tampilan baru */
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.profile-box p {
+  font-size: 16px; /* Sesuaikan ukuran teks */
+  font-weight: bold; /* Teks lebih tebal */
+  margin: 0; /* Hilangkan margin default */
+}
