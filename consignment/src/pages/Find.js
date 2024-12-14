@@ -1,12 +1,17 @@
 import "../style/Find.css";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useLocation } from "react-router-dom";
 import { useState } from "react";
 import ProductPage from "./ProductPage";
 import ServicePage from "./ServicePage";
 
 const Find = () => {
     const navigate = useNavigate();
-    const [active, setActive] = useState("product"); // Default aktif adalah "product"
+    const location = useLocation();
+
+    const queryParams= new URLSearchParams(location.search);
+    const option = queryParams.get("option") || "product";
+    const [active, setActive] = useState(option);
+
 
     return (
         <>

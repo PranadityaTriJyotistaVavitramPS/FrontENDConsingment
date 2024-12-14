@@ -52,6 +52,7 @@
 }
 
 
+
 .box1 {
     background: linear-gradient(to bottom,black,#0072B8, #1F84C1);
     padding-top: 120px;
@@ -420,7 +421,11 @@
     font-weight: bold;
     font-size: 10px;
 }
-
+.professional11 {
+    border-radius: 10px;
+    width: 55vh; 
+    height: 200px;
+}
 .professional12 {
     border-radius: 10px;
     background: linear-gradient(to right, #FCDC00, #0072B8 80%), rgba(0, 0, 0, 0.3); /* Lapisan utama di bawah, transparan di atas */
@@ -430,6 +435,18 @@
     padding: 10px 10px;
     justify-content: center;  /* Center horizontally */
     align-items: center;   
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+}
+
+.fotoprofesional{
+    width: 66px; /* Set a fixed width */
+    height: 66px; /* Set a fixed height */
+    overflow: hidden; /* Ensure child content does not overflow */
+    border-radius: 10px; /* Matches image border radius */
 }
 
 @media (max-width: 1200px) {
