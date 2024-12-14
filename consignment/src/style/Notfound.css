@@ -1,4 +1,4 @@
-.pagenotfound {
+.pagenotfound39 {
     /* Define the gradient background and image */
     background: 
         url('/public/img/group14.png'), /* Gambar */
@@ -6,37 +6,67 @@
     background-size: 100% auto, cover; /* Gambar memenuhi lebar, tinggi disesuaikan, gradien tetap cover */
     background-position: bottom; /* Posisi gambar di tengah */
     background-repeat: no-repeat;
-
-    /* Gunakan aspect ratio untuk menyesuaikan tinggi sesuai lebar */
-    aspect-ratio: 16 / 9; /* Sesuaikan rasio jika perlu */
-    width: 100vw; /* Penuhi lebar perangkat */
-    height: auto; /* Tinggi menyesuaikan rasio */
-    justify-content: center;  /* Center horizontally */
-    align-items: center; 
+    width: 100vw !important; /* Penuhi lebar perangkat */
+    height: 100vh; /* Tinggi menyesuaikan rasio */
     display: flex;
 }
 
-.pagenotfound{
-    align-items: center; /* Center vertically */
-    justify-content: center;
+.pagenotfound39{
     font-family: "Lexend", sans-serif;
     display: flex;
     flex-direction: column;
     color: white;
     gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.ops{
+.ops39{
     text-align: left;
     font-size: 20px;
 }
 
-.t404{
+.t40439{
     text-align: left;
     font-size: 200px;
 }
 
-.tulisan{
+.t40439 img{
+    width: 40vw;
+    height: auto;
+}
+
+@media (max-width: 900px) {
+    .t40439 img{
+        width: 95vw;
+        height: auto;
+    }
+
+    .tulisan39{
+        font-family: "Lexend", sans-serif;
+        text-align: left;
+        font-size: 10vw;
+    }
+}
+
+@media (max-width: 900px) and (orientation: landscape) {
+    .pagenotfound39 {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        height: 100vh;
+        gap: 0px;
+    }
+
+    .t40439 img{
+        width: 30vw;
+        height: auto;
+    }
+
+    
+}
+
+.tulisan39{
+    font-family: "Lexend", sans-serif;
     text-align: left;
-    font-size: 50px;
+    font-size: 3vw;
 }

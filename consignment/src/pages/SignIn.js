@@ -96,128 +96,130 @@ const SignIn = () => {
           Back
         </div>
         <div className="formsignin">
-            <div className="tulisansignin">Sign In</div>
-            <div className="fotoprofil">
-                <label htmlFor="upload-foto" className="foto-upload-label">
-                <div
-                    className="foto-container"
-                    style={{
-                    backgroundImage: foto ? `url(${foto})` : 'none',
-                    }}
-                >
-                    {!foto && (
-                    <div className="upload-text">
-                        Upload Picture
+            <div className="scrollkeatas">
+                <div className="tulisansignin">Sign Up</div>
+                <div className="fotoprofil">
+                    <label htmlFor="upload-foto" className="foto-upload-label">
+                    <div
+                        className="foto-container"
+                        style={{
+                        backgroundImage: foto ? `url(${foto})` : 'none',
+                        }}
+                    >
+                        {!foto && (
+                        <div className="upload-text">
+                            Upload Picture
+                        </div>
+                        )}
                     </div>
-                    )}
-                </div>
-                </label>
-                <input
-                type="file"
-                id="upload-foto"
-                onChange={handleImageChange}
-                style={{ display: "none" }}
-                />
-            </div>
-            
-            <form id="signinform" onSubmit={handleSubmit}>
-                <div className="usernamesignin">
+                    </label>
                     <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        value={formData.username}
-                        onChange={handleChange}
-                        placeholder="Username"
+                    type="file"
+                    id="upload-foto"
+                    onChange={handleImageChange}
+                    style={{ display: "none" }}
                     />
                 </div>
-                <div className="emailsignin">
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Email"
-                    />
-                </div>
-                <div className="passwordsignin">
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        placeholder="Password"
-                    />
-                </div>
-                <div className="input-field">
-                    <input
-                        type="fullName"
-                        id="fullName"
-                        name="fullname"
-                        value={formData.fullname}
-                        onChange={handleChange}
-                        placeholder="Full Name"
-                    />
-                </div>
-                <div className="input-field">
-                    <input
-                        type="text"
-                        id="telephone"
-                        name="phone_number"
-                        value={formData.phone_number}
-                        onChange={handleChange}
-                        placeholder="Telephone Number"
-                    />
-                </div>
-                <div className="input-field">
-                    <input
-                        id="address"
-                        name="fulladdress"
-                        value={formData.fulladdress}
-                        onChange={handleChange}
-                        placeholder="Full Address"
-                    />
-                </div>
-                <div className="datebirthsignin">
-                    What is your date of birth?
-                </div>
-                <div className="birthdate-section">
-                    <div className="date-picker">
-                        <select id="day" name="day" className="custom-select" value={formData.birthdate.day} onChange={handleChangeB}>
-                            <option value="">DD</option>
-                            {[...Array(31).keys()].map(i => (
-                                <option key={i + 1} value={i + 1}>{i + 1}</option>
-                            ))}
-                        </select>
-                        <select id="month" name="month" className="custom-select" value={formData.birthdate.month} onChange={handleChangeB}>
-                            <option value="">BB</option>
-                            {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((month, index) => (
-                                <option key={index} value={index + 1}>{month}</option>
-                            ))}
-                        </select>
-                        <select id="year" name="year" className="custom-select" value={formData.birthdate.year} onChange={handleChangeB}>
-                            <option value="">TTTT</option>
-                            {[...Array(100).keys()].map(i => {
-                                const year = new Date().getFullYear() - i;
-                                return (
-                                    <option key={year} value={year}>{year}</option>
-                                );
-                            })}
-                        </select>
+                
+                <form id="signinform" onSubmit={handleSubmit}>
+                    <div className="usernamesignin">
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            value={formData.username}
+                            onChange={handleChange}
+                            placeholder="Username"
+                        />
                     </div>
-                </div>
+                    <div className="emailsignin">
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="Email"
+                        />
+                    </div>
+                    <div className="passwordsignin">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            placeholder="Password"
+                        />
+                    </div>
+                    <div className="input-field1">
+                        <input
+                            type="fullName"
+                            id="fullName"
+                            name="fullname"
+                            value={formData.fullname}
+                            onChange={handleChange}
+                            placeholder="Full Name"
+                        />
+                    </div>
+                    <div className="input-field2">
+                        <input
+                            type="text"
+                            id="telephone"
+                            name="phone_number"
+                            value={formData.phone_number}
+                            onChange={handleChange}
+                            placeholder="Telephone Number"
+                        />
+                    </div>
+                    <div className="input-field3">
+                        <input
+                            id="address"
+                            name="fulladdress"
+                            value={formData.fulladdress}
+                            onChange={handleChange}
+                            placeholder="Full Address"
+                        />
+                    </div>
+                    <div className="datebirthsignin">
+                        What is your date of birth?
+                    </div>
+                    <div className="birthdate-section">
+                        <div className="date-picker">
+                            <select id="day" name="day" className="custom-select" value={formData.birthdate.day} onChange={handleChangeB}>
+                                <option value="">DD</option>
+                                {[...Array(31).keys()].map(i => (
+                                    <option key={i + 1} value={i + 1}>{i + 1}</option>
+                                ))}
+                            </select>
+                            <select id="month" name="month" className="custom-select" value={formData.birthdate.month} onChange={handleChangeB}>
+                                <option value="">BB</option>
+                                {["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"].map((month, index) => (
+                                    <option key={index} value={index + 1}>{month}</option>
+                                ))}
+                            </select>
+                            <select id="year" name="year" className="custom-select" value={formData.birthdate.year} onChange={handleChangeB}>
+                                <option value="">TTTT</option>
+                                {[...Array(100).keys()].map(i => {
+                                    const year = new Date().getFullYear() - i;
+                                    return (
+                                        <option key={year} value={year}>{year}</option>
+                                    );
+                                })}
+                            </select>
+                        </div>
+                    </div>
 
-                <div className="getstarted">
-                    <button type="submit">Get Started</button>
-                </div>
-                <div className="alreadysignin">
-                    <a href="/login">
-                        Already have an account? <span>log in</span>
-                    </a>
-                </div>
-            </form>
+                    <div className="getstarted">
+                        <button type="submit">Get Started</button>
+                    </div>
+                    <div className="alreadysignin">
+                        <a href="/login">
+                            Already have an account? <span>log in</span>
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
       </div>
     </div>
