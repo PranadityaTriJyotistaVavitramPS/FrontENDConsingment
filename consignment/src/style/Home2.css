@@ -423,8 +423,10 @@
 }
 .professional11 {
     border-radius: 10px;
-    width: 55vh; 
+    width: 100%; 
     height: 200px;
+    overflow: hidden;
+    object-fit: cover;
 }
 .professional12 {
     border-radius: 10px;

@@ -15,6 +15,8 @@ import ProductDetail from './pages/ProductDetail.js'
 import RatingProduct from './pages/Rateaproduct.js'
 import ServicePage from './pages/ServicePage.js'
 import ServiceDetail from './pages/ServiceDetail.js'
+import Cantsell from './pages/Cantsell.js'
+import NoUserDetail from './pages/NoUserDetail.js'
 
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -37,7 +39,8 @@ const App = () => {
         <Route path='/sellproduct' element={<CreateProductPage/>} />
         <Route path='/sellservice' element={<CreateServicePage/>} />
         <Route path='/savedproduct' element={<SavedProduct/>} />
-        
+        <Route path='/unauthorized' element={<Cantsell/>} />
+        <Route path='/unauthorizedid' element={<NoUserDetail/>} />
         <Route path='/rateProduct' element={<RatingProduct />} />
         <Route path='/servicePage' element={<ServicePage/>} />
         <Route path='/productDetail/:id_product' element={<ProductDetail/>} />

@@ -1,17 +1,28 @@
 import "../style/milihjualapa.css"
 import { useNavigate } from "react-router-dom";
+import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
-
-
+import Cookies from 'js-cookie'
 
 
 const SellSelection = () => {
-    const navigate = useNavigate()
+    const token = Cookies.get('token');
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (token === undefined) {
+            navigate('/unauthorized');
+        }
+    }, [navigate,token]);
+
+    if(token === undefined){
+        navigate('/unauthorized');
+    }
     const handleSellProductButton = () =>{
-        navigate('/sellproduct')
+        navigate('/sellproduct');
     }
     const handleSellServiceButton =() =>{
-        navigate('/sellservice')
+        navigate('/sellservice');
     }
     return (
         <>

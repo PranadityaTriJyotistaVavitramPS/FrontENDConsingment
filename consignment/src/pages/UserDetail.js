@@ -6,6 +6,7 @@ import axios from 'axios';
 
 function UserDetail() {
     const navigate = useNavigate();
+    const token = Cookies.get('token');
     const [profile, setProfile] = useState({
         name: "",
         username: "",
@@ -33,12 +34,15 @@ function UserDetail() {
         Cookies.remove("token");
         navigate('/')
     }
+
+    useEffect(()=>{
+        if(token === undefined){
+            navigate('/unauthorizedid');
+        }
+    },[token,navigate])
     
 
     useEffect(()=> {
-        const token = Cookies.get('token');
-        console.log("ini token untuk userpage:",token);
-  
         axios.get('http://localhost:5000/api/v1/users/getSingleUser',{
           withCredentials:true, 
           headers:{
@@ -67,7 +71,7 @@ function UserDetail() {
         .catch((error) => {
           console.error("Error fetching user data:", error);
         });
-    },[profile]);
+    },[profile,token]);
 
     const handleSaveButton = async (e) => {
         e.preventDefault();

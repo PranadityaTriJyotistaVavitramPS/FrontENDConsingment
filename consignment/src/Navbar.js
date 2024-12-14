@@ -8,7 +8,7 @@ function BoxContainer() {
   const [activeButton, setActiveButton] = useState(null);
   const navigate = useNavigate(); // Moved useNavigate here inside the component
   const [user,setUser] = useState(null);
-  const [searchQuery, setSearchQuery] = useState('');
+  // const [searchQuery, setSearchQuery] = useState('');
 
 
   const handleSellButton = () =>{
@@ -31,7 +31,6 @@ function BoxContainer() {
       .catch((error) => {
         console.error("Error fetching user data:", error);
       });
-
   },[]);
 
   // Fungsi untuk mengatur tombol yang aktif dan scroll ke section
@@ -78,7 +77,7 @@ function BoxContainer() {
           About
         </div>
       </div>
-      <div className="search-container">
+      {/* <div className="search-container">
         <input 
           type="text" 
           placeholder="Search..." 
@@ -87,7 +86,7 @@ function BoxContainer() {
           onChange={(e)=> setSearchQuery(e.target.value)}
         />
         <button className="search-button">Search</button>
-      </div>
+      </div> */}
       <div className="sellproductorservice" onClick={handleSellButton}>
         <span className="material-symbols-outlined custom-icon">add_circle</span>
         Sell Product or Service

@@ -28,6 +28,7 @@ const ServicePage = () => {
 
     fetchServices();
   },[])
+  
 
   if(loading){
     return <div>....Loading</div>
