@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
 
+.container2 {
+  display: flex;
+  flex-direction: column;
+}
 
 body {
   font-family: 'Lexend', sans-serif; /* Terapkan Lexend */
@@ -9,21 +13,39 @@ body {
 }
 
 .container {
-  max-width: 1429px;
   margin: 0 auto;
   padding: 20px;
+  display: flex;
+  gap: 30px;
+
+}
+
+@media (max-width: 768px) {
+  .container2 {
+      padding-top: 50px;
+  }
 }
 
 .back-button {
-  background-color: #ffd600;
-  margin-left: -2cm;
-  margin-top: 20px;
-  color: #333;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 17.73px;
-  cursor: pointer;
-  margin-bottom: 20px;
+    background-color: #FCDC00;
+    color: black;
+    width: 10vw;
+    min-width: 100px;
+    height: auto; /* Mengatur tinggi agar menyesuaikan konten */
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-family: "Lexend", sans-serif;
+    padding: 5px;
+    border-radius: 18px;
+    font-weight: 300;
+    font-size: 10px;
+    position: fixed; /* Gunakan fixed agar tetap di pojok atas kiri halaman */
+    top: 20px; /* Jarak 20px dari bagian atas */
+    left: 20px; /* Jarak 20px dari bagian kiri */
+    z-index: 1000; /* Jika ada elemen lain yang menutupi, pastikan ini berada di depan */
+    border: none; /* Menghilangkan border */
+    outline: none;
 }
 
 .title {
@@ -34,8 +56,8 @@ body {
 }
 
 .big-box {
-  width: 1450px;
-  height: 600px;
+  width: 80vw;
+  height: auto;
   margin: 0 auto;
   background-color: #ffffff;
   border: 1px solid rgba(122, 189, 222, 0.5);
@@ -202,4 +224,89 @@ body {
   .personal-content {
     grid-template-columns: 1fr;
   }
+}
+
+/* Password Modal Styling */
+.password-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  z-index: 1000;
+}
+
+.password-modal h3 {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.password-modal input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.password-modal input:focus {
+  outline: none;
+  border: 1px solid #007BFF;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.password-modal button {
+  width: calc(50% - 10px);
+  padding: 10px;
+  margin: 10px 5px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.password-modal button:hover {
+  background-color: #0056b3;
+}
+
+.password-modal .error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.password-modal button.cancel {
+  background-color: #6c757d;
+}
+
+.password-modal button.cancel:hover {
+  background-color: #5a6268;
+}
+
+/* Dimmed background for modal */
+body.modal-active {
+  overflow: hidden;
+}
+
+body.modal-active::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
 }
